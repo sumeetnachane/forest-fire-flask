@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FWI Prediction</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+      }
+
+      .login {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        color: white;
+        width: 350px;
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      input {
+        width: 90%;
+        padding: 10px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 8px;
+        outline: none;
+        font-size: 14px;
+      }
+
+      input:focus {
+        box-shadow: 0 0 5px #fff;
+      }
+
+      button {
+        width: 95%;
+        padding: 12px;
+        margin-top: 15px;
+        border: none;
+        border-radius: 8px;
+        background: #00c6ff;
+        background: linear-gradient(to right, #00c6ff, #0072ff);
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(to right, #0072ff, #00c6ff);
+      }
+
+      h2 {
+        margin-top: 20px;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="login">
+      <h1>🔥 FWI Prediction</h1>
+
+      <form action="{{url_for('predict_datapoint')}}" method="post">
+        <input
+          type="text"
+          name="Temperature"
+          placeholder="Temperature"
+          required
+        />
+
+        <input type="text" name="RH" placeholder="RH" required />
+
+        <input type="text" name="Ws" placeholder="Ws" required />
+
+        <input type="text" name="Rain" placeholder="Rain" required />
+
+        <input type="text" name="FFMC" placeholder="FFMC" required />
+
+        <input type="text" name="DMC" placeholder="DMC" required />
+
+        <input type="text" name="ISI" placeholder="ISI" required />
+
+        <input type="text" name="Classes" placeholder="Classes" required />
+
+        <input type="text" name="Region" placeholder="Region" required />
+
+        <button type="submit">Predict</button>
+      </form>
+
+      <h2>The Prediction is {{results}}</h2>
+    </div>
+  </body>
+</html>
