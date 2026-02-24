@@ -11,4 +11,6 @@ RUN apt-get update && apt-get install -y \
 
 COPY . .
 
+EXPOSE 8080
+
 CMD ["python", "application.py"]
