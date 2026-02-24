@@ -1,9 +1,5 @@
 {
-  "AWSEBDockerrunVersion": "1",
-  "Image": {
-    "Name": "066666422939.dkr.ecr.us-east-1.amazonaws.com/simple-docker-service:latest",
-    "Update": "true"
-  },
+  "AWSEBDockerrunVersion": 1,
   "Ports": [
     {
       "ContainerPort": 8080
